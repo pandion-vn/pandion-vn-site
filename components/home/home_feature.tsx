@@ -1,39 +1,107 @@
-import Link from 'next/link';
+import useTrans from '../../hooks/useTrans';
+import {
+  FiTrendingUp,
+  FiLock,
+  FiAirplay,
+  FiClock,
+  FiUploadCloud,
+  FiPieChart,
+} from 'react-icons/fi';
 
 const HomeFeature = () => {
+  const trans = useTrans();
+
   return (
-    <section className="section">
-      <div className="container">
-        <div className="row justify-ontent-center">
-          <div className="col-12">
-            <div className="section-title text-center mb-4 pb-2">
-              <h4 className="title mb-4">Các giải pháp nền tảng tiên tiến</h4>
-              <p className="text-muted para-desc mb-0 mx-auto">
-                <span className="text-primary fw-bold">Pandion</span> is a
-                full-fledged, end-to-end solutions provider. We're here to help
-                you grow your business or organization, so that you can focus on
-                what's most important to you.
-              </p>
+    <section className="bg-light">
+      <div className="container-fluid px-0">
+        <div className="row g-0 align-items-center">
+          <div className="col-xl-2 col-lg-4 col-md-4">
+            <div className="card features fea-primary text-center rounded-0 px-4 py-5 bg-light bg-gradient position-relative overflow-hidden border-0">
+              <span className="h2 icon2 text-primary">
+                <FiTrendingUp className="uil uil-chart-line" />
+              </span>
+              <div className="card-body p-0 content">
+                <h5>{trans.home.featureTitleCard1}</h5>
+                <p className="para text-muted mb-0">
+                  {trans.home.featureContentCard1}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="row">
-          {/* {{ $page := . }}
-          {{ range $.Params.solutions }}
-          {{ $solution := . }}
-          {{- partial "card/solution-card" (dict "context" $page "solution_title" $solution.title "solution_icon" $solution.icon) -}}
-          {{ end }} */}
+          <div className="col-xl-2 col-lg-4 col-md-4">
+            <div className="card features fea-primary text-center rounded-0 px-4 py-5 bg-light bg-gradient position-relative overflow-hidden border-0">
+              <span className="h2 icon2 text-primary">
+                <FiLock className="uil uil-airplay" />
+              </span>
+              <div className="card-body p-0 content">
+                <h5>{trans.home.featureTitleCard2}</h5>
+                <p className="para text-muted mb-0">
+                  {trans.home.featureContentCard2}
+                </p>
+              </div>
+            </div>
+          </div>
 
-          <div className="col-12 mt-4 pt-2 text-center">
-            <Link href="#" className="btn btn-primary">
-              Xem Thêm <i className="mdi mdi-arrow-right"></i>
-            </Link>
+          <div className="col-xl-2 col-lg-4 col-md-4">
+            <div className="card features fea-primary text-center rounded-0 px-4 py-5 bg-light bg-gradient position-relative overflow-hidden border-0">
+              <span className="h2 icon2 text-primary">
+                <FiAirplay className="uil uil-rocket" />
+              </span>
+              <div className="card-body p-0 content">
+                <h5>{trans.home.featureTitleCard3}</h5>
+                <p className="para text-muted mb-0">
+                  {trans.home.featureContentCard3}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-xl-2 col-lg-4 col-md-4">
+            <div className="card features fea-primary text-center rounded-0 px-4 py-5 bg-light bg-gradient position-relative overflow-hidden border-0">
+              <span className="h2 icon2 text-primary">
+                <FiClock className="uil uil-clock" />
+              </span>
+              <div className="card-body p-0 content">
+                <h5>{trans.home.featureTitleCard4}</h5>
+                <p className="para text-muted mb-0">
+                  {trans.home.featureContentCard4}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-xl-2 col-lg-4 col-md-4">
+            <div className="card features fea-primary text-center rounded-0 px-4 py-5 bg-light bg-gradient position-relative overflow-hidden border-0">
+              <span className="h2 icon2 text-primary">
+                <FiUploadCloud className="uil uil-users-alt" />
+              </span>
+              <div className="card-body p-0 content">
+                <h5>{trans.home.featureTitleCard5}</h5>
+                <p className="para text-muted mb-0">
+                  {trans.home.featureContentCard5}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-xl-2 col-lg-4 col-md-4">
+            <div className="card features fea-primary text-center rounded-0 px-4 py-5 bg-light bg-gradient position-relative overflow-hidden border-0">
+              <span className="h2 icon2 text-primary">
+                <FiPieChart className="uil uil-search" />
+              </span>
+              <div className="card-body p-0 content">
+                <h5>{trans.home.featureTitleCard6}</h5>
+                <p className="para text-muted mb-0">
+                  {trans.home.featureContentCard6}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default HomeFeature;
