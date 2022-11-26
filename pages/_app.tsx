@@ -1,5 +1,4 @@
 import '../styles/css/bootstrap.min.css';
-import '../styles/css/tobii.min.css';
 import '../styles/css/materialdesignicons.min.css';
 import '../styles/css/tiny-slider.css';
 import '../styles/css/style.css';

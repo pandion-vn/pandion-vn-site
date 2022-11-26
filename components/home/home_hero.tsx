@@ -13,14 +13,14 @@ const HomeHero = () => {
         <div className="row">
           <div className="col-12">
             <div className="title-heading">
-              <h4 className="text-black-50">{trans.home.heroH4}</h4>
               <h1 className="heading fw-bold mb-3">
                 {trans.home.heroH1}{' '}
-                <br />{trans.home.heroH1Br}
+                <br /><span className="text-primary fw-bold">{trans.home.heroH1Br}</span>
               </h1>
-              <h5 className="para-desc text-muted">
+              <h4 className="text-black-50">{trans.home.heroH4}</h4>
+              <h6 className="para-desc text-muted">
                 {trans.home.heroDesc}
-              </h5>
+              </h6>
             </div>
           </div>
         </div>

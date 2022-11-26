@@ -1,12 +1,10 @@
 export default {
   home: {
-    heroH4: 'IT Software & Design',
-    heroH1: 'Đôi Cánh cho những',
-    heroH1Br: 'Ý Tưởng.',
+    heroH1: 'Đôi Cánh của',
+    heroH1Br: 'Ý Tưởng',
+    heroH4: 'Cung cấp giải pháp & Chuyển đổi số',
     heroDesc: `
-      Pandion sẵn sàng lắng nghe & đưa ra giải pháp cho mọi vấn đề của bạn
-      một cách hiệu quả nhất. Chúng tôi luôn hướng tới giá trị cho Doanh Nghiệp
-      & Cộng Đồng.
+      Pandion luôn hướng tới giá trị cho Doanh Nghiệp & Xã Hội
     `,
     //
     featureTitleCard1: 'Hiệu Suất Cao',
@@ -36,7 +34,7 @@ export default {
     teamCSuiteIntro: 'Những cánh chim dẫn đầu',
     teamCSuiteDesc: 'Chúng tôi luôn hướng tới việc tạo nên những sản phẩm có giá trị với Khách Hàng và đóng góp lợi ích cho Xã Hội. Với Pandion, hãy để mọi vấn đề của bạn được đơn giản hơn.',
     //
-    introTitle: 'Hãy để  Pandion chắp cánh cho những Ý Tưởng của bạn.',
+    introTitle: 'Hãy để  Pandion là Đôi Cánh cho Ý Tưởng của bạn.',
     introDesc: 'Thành quả đã cố gắng của những cánh chim Pandion. Chúng tôi không ngần nại để khó khăn cản bước.',
     //
     newsBlogH6: 'Hãy đón xem những',

@@ -52,13 +52,14 @@ const AboutUs = () => {
 
             <div className="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
               <div className="section-title ms-lg-4">
-                <h4 className="title mb-4">Lịch Sử  Hình Thành</h4>
+                <h4 className="title mb-4">Sự Hình Thành</h4>
                 <p className="text-muted">
                   <span className="text-primary fw-bold">Pandion</span> được thành lập
-                  vào năm 2020 với tiền thân là Công ty 66. Với những con người tài năng và
-                  nhiệt huyết chúng tôi áp dụng Công Nghệ để giúp ích cho Đời Sống và
-                  có tác động tích cực cho Xã Hội. Với ý tưởng đưa Trí Tuệ Nhân Tạo
-                  & Chuyển Đổi Số vào những nền tảng như Bất Động Sản, Sức Khỏe, Xây Dựng, Nông Trại & Thủy Sản 4.0.
+                  vào năm 2020 là tiền thân của Công Ty TNHH Đầu Tư Thương Mại 66.
+                  Cùng những con người nhiệt huyết, Pandion đã áp dụng lĩnh vực Công Nghệ
+                  để giúp ích cho Đời Sống và có tác động tích cực đến Xã Hội.
+                  Với ý tưởng đưa Trí Tuệ Nhân Tạo & Chuyển Đổi Số vào những nền tảng như
+                  Bất Động Sản, Sức Khỏe, Kiến Trúc, Nông Trại & Thủy Sản 4.0.
                 </p>
               </div>
             </div>
@@ -71,9 +72,8 @@ const AboutUs = () => {
               <div className="section-title mb-4 pb-2">
                 <h4 className="title mb-4">Những điểm mạnh</h4>
                 <p className="text-muted para-desc mx-auto mb-0">
-                  Khó khăn không nằm trong từ điển của{' '}
-                  <span className="text-primary fw-bold">Pandion</span> vì chúng tôi luôn
-                  cố gắng nỗ lực từng ngày để có thể mang lại những giá trị tốt nhất cho Khách Hàng và Cộng Đồng.
+                  <span className="text-primary fw-bold">Pandion</span> luôn
+                  cố gắng nỗ lực học hỏi và trao dồi từng ngày để có thể mang lại những giá trị tốt nhất cho Khách Hàng và đóng góp cho Xã Hội.
                 </p>
               </div>
             </div>

@@ -3,7 +3,7 @@ title: 'Dự án Aquaculture'
 desc: 'IoT Platform'
 client: 'Khách hàng Start-Up'
 socialImage: '/images/no-image.png'
-date: 'Q3 2020'
+date: 'Q3 2021'
 ---
 
 ![aquaculture](/images/no-image.png)
@@ -13,6 +13,6 @@ These alternatives to the classNameic Lorem Ipsum texts are often amusing and te
 
 - **Khách hàng** : Khách hàng Start-Up
 - **Dự án** : IoT Platform
-- **Ngày** : Q3 2020
+- **Ngày** : Q3 2021
 - **Website** : www.pandion.vn
 - **Khu vực** : HCM City
