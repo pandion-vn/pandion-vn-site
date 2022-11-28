@@ -2,10 +2,14 @@
  * @type {import('next').NextConfig}
  */
 const path = require('path');
-const { i18n } = require('./i18n.config')
 
 module.exports = {
-  i18n,
+  i18n: {
+    locales: ['vi', 'en'],
+    defaultLocale: 'vi',
+    localeDetection: false,
+  },
+  trailingSlash: true,
   images: {
     unoptimized: true,
     domains: [],
