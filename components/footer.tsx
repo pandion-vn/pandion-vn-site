@@ -1,7 +1,34 @@
-import Link from 'next/link';
+import { menu } from '@/types/menu';
 import { FiFacebook, FiLinkedin, FiChevronRight, FiMail, FiArrowUp } from 'react-icons/fi';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const Footer = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  const scroll = () => {
+    setScrollY(window.pageYOffset);
+  }
+
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  useEffect(() => {
+    function watchScroll() {
+      window.addEventListener('scroll', scroll);
+    }
+
+    watchScroll();
+
+    return () => {
+      window.removeEventListener('scroll', scroll);
+    };
+  });
+
   return (
     <>
       {/* Footer Start */}
@@ -22,10 +49,11 @@ const Footer = () => {
             <div className="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
               <h5 className="text-light footer-head">Danh mục</h5>
               <ul className="list-unstyled footer-list mt-4">
-                <li><Link href="/about_us" className="text-foot"><FiChevronRight className="uil uil-angle-right-b me-1" /> Về chúng tôi</Link></li>
-                <li><Link href="/contact" className="text-foot"><FiChevronRight className="uil uil-angle-right-b me-1" /> Liên hệ</Link></li>
-                <li><Link href="/portfolio" className="text-foot"><FiChevronRight className="uil uil-angle-right-b me-1" /> Portfolio</Link></li>
-                <li><Link href="/blog" className="text-foot"><FiChevronRight className="uil uil-angle-right-b me-1" /> Bài viết</Link></li>
+                {menu.map((item) => (
+                  <li key={item.id} >
+                    <Link href={item.path} className="text-foot"><FiChevronRight className="uil uil-angle-right-b me-1" /> {item.name}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -78,7 +106,7 @@ const Footer = () => {
       </footer>
       
       {/* Back to top */}
-      <Link href="#" id="back-to-top" className="btn btn-icon btn-primary back-to-top"><FiArrowUp className="icons" /></Link>
+      <a onClick={() => goToTop()} id="back-to-top" className="btn btn-icon btn-primary back-to-top" style={scrollY > 500 ? {display: "block"} : {display: "none"}}><FiArrowUp className="icons" /></a>
     </>
   );
 };

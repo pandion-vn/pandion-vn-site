@@ -3,7 +3,7 @@ import { PostsOrPages } from '@tryghost/content-api';
 import { WithChildren } from '@/types/shared';
 import { Post } from '@/types/post';
 import { FiFacebook, FiLinkedin, FiCalendar, FiUser } from 'react-icons/fi';
-import { formatDate, truncateStr } from '@/common/utils';
+import { formatHtmlContent, formatDate, truncateStr } from '@/common/utils';
 import Layout from '@/components/layout';
 import Heading from '@/components/widgets/heading';
 import Link from 'next/link';
@@ -57,23 +57,27 @@ const BlogDetail = ({ post }: BlogDetailProps) => {
                 </div>
 
                 <div className="col-md-10">
-
-                  <img src={post.feature_image ?? '/images/no-image.png'} className="img-fluid rounded-md shadow" alt="" />
+                  <img
+                    src={post.feature_image ?? '/images/no-image.png'}
+                    className="img-fluid rounded-md shadow"
+                    alt=""
+                  />
 
                   <ul className="list-unstyled d-flex justify-content-between mt-3">
                     <li className="list-inline-item user me-2">
                       <p className="text-muted">
-                        <FiUser className="uil text-dark" />{' '}Pandioner
+                        <FiUser className="uil text-dark" /> Pandioner
                       </p>
                     </li>
                     <li className="list-inline-item date text-muted">
-                      <FiCalendar className="uil text-dark" />{' '}{formatDate(post.published_at)}
+                      <FiCalendar className="uil text-dark" />{' '}
+                      {formatDate(post.published_at)}
                     </li>
                   </ul>
 
                   <div
                     className="mt-3"
-                    dangerouslySetInnerHTML={{ __html: post.html.replace(/srcset=*/g, '') }}
+                    dangerouslySetInnerHTML={{ __html: formatHtmlContent(post.html) }}
                   />
 
                   {/* <h5 className="mt-4">Comments :</h5>

@@ -86,7 +86,7 @@ const HomeTeams = () => {
                 <div className="card work-container work-modern overflow-hidden rounded border-0 shadow-md">
                   <div className="card-body p-0">
                     <img
-                      src="/images/course/online/ab01.jpg"
+                      src="/images/teams/founder.png"
                       className="img-fluid"
                       alt="work-image"
                     />
@@ -107,7 +107,7 @@ const HomeTeams = () => {
                     <div className="card work-container work-modern overflow-hidden rounded border-0 shadow-md">
                       <div className="card-body p-0">
                         <img
-                          src="/images/course/online/ab02.jpg"
+                          src="/images/teams/ceo.jpg"
                           className="img-fluid"
                           alt="work-image"
                         />
@@ -128,7 +128,7 @@ const HomeTeams = () => {
                     <div className="card work-container work-modern overflow-hidden rounded border-0 shadow-md">
                       <div className="card-body p-0">
                         <img
-                          src="/images/course/online/ab03.jpg"
+                          src="/images/teams/cto.jpeg"
                           className="img-fluid"
                           alt="work-image"
                         />

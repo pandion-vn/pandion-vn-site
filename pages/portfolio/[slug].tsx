@@ -30,8 +30,13 @@ const PortfolioDetail = ({ slug, frontmatter, content }: any) => {
 
       <section className="section">
         <div className="container">
+          <img
+            src={frontmatter.socialImage}
+            className="img-thumbnail"
+            alt=""
+          />
           <div
-            className="text-muted"
+            className="text-muted mt-4"
             dangerouslySetInnerHTML={{ __html: md().render(content) }}
           />
         </div>

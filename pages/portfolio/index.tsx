@@ -27,12 +27,15 @@ const PortfolioListing = ({ portfolios }: any) => {
         <div className="container">
           <div id="grid" className="row">
             {portfolios.map(({ slug, frontmatter }: any) => (
-              <div key={slug} className="col-lg-4 col-md-8 col-12 pt-2 mt-4 picture-item">
+              <div
+                key={slug}
+                className="col-lg-4 col-md-8 col-12 pt-2 mt-4 picture-item"
+              >
                 <div className="card work-container work-modern position-relative overflow-hidden shadow rounded border-0">
                   <div className="card-body p-0">
                     <img
                       src={frontmatter.socialImage}
-                      className="img-fluid rounded"
+                      className="img-thumbnail"
                       alt="work-image"
                     />
                     <div className="overlay-work bg-dark"></div>
@@ -50,7 +53,8 @@ const PortfolioListing = ({ portfolios }: any) => {
                         <FiUser className="uil uil-user" /> {frontmatter.client}
                       </small>
                       <small className="text-light date">
-                        <FiCalendar className="muil uil-calendar-alt" /> {frontmatter.date}
+                        <FiCalendar className="muil uil-calendar-alt" />{' '}
+                        {frontmatter.date}
                       </small>
                     </div>
                   </div>
@@ -71,7 +75,10 @@ export async function getStaticProps() {
 
   const portfolios = files.map((fileName) => {
     const slug = fileName.replace('.md', '');
-    const readFile = fs.readFileSync(`markdown/portfolios/${fileName}`, 'utf-8');
+    const readFile = fs.readFileSync(
+      `markdown/portfolios/${fileName}`,
+      'utf-8'
+    );
 
     const { data: frontmatter } = matter(readFile);
 

@@ -1,7 +1,13 @@
-import Link from 'next/link';
+import { menu } from '@/types/menu';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 import { FiFacebook, FiLinkedin } from 'react-icons/fi';
+import Link from 'next/link';
 
 const Header = () => {
+  const router = useRouter();
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+
   return (
     <header id="topnav" className="defaultscroll sticky bg-white">
       <div className="container">
@@ -29,7 +35,10 @@ const Header = () => {
         <div className="menu-extras">
           <div className="menu-item">
             {/* Mobile menu toggle */}
-            <a className="navbar-toggle" id="isToggle">
+            <a
+              className={isOpenMenu ? 'navbar-toggle open' : 'navbar-toggle'}
+              onClick={() => setIsOpenMenu(!isOpenMenu)}
+            >
               <div className="lines">
                 <span></span>
                 <span></span>
@@ -39,34 +48,29 @@ const Header = () => {
           </div>
         </div>
 
-        <div id="navigation">
+        <div
+          id="navigation"
+          style={isOpenMenu ? { display: 'block' } : { display: 'none' }}
+        >
           {/* Navigation Menu */}
           <ul className="navigation-menu">
-            <li>
-              <Link href="/" className="sub-menu-item">
-                Trang Chủ
-              </Link>
-            </li>
-            <li>
-              <Link href="/portfolio" className="sub-menu-item">
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog" className="sub-menu-item">
-                Bài Viết
-              </Link>
-            </li>
-            <li>
-              <Link href="/about_us" className="sub-menu-item">
-                Về Chúng Tôi
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="sub-menu-item">
-                Liên Hệ
-              </Link>
-            </li>
+            {menu.map((item) => (
+              <li
+                key={item.id}
+                className={router.pathname == item.path ? 'active' : undefined}
+              >
+                <Link
+                  href={item.path}
+                  className={
+                    router.pathname == item.path
+                      ? 'sub-menu-item active'
+                      : 'sub-menu-item'
+                  }
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
 
           <ul className="buy-menu-btn d-none">

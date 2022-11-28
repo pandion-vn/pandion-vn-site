@@ -18,3 +18,11 @@ export const formatDate = (date: string, custom?: string) => {
 
   return moment(date).format(custom ?? 'DD/MM/YYYY');
 };
+
+export const formatHtmlContent = (html: string) => {
+  if (!html) {
+    return '';
+  }
+
+  return html.replace(/srcset=*/g, '').replace(/kg-image=*/g, 'img-fluid rounded');
+};
