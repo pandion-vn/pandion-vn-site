@@ -15,7 +15,7 @@ const PortfolioDetail = ({ slug, frontmatter, content }: any) => {
     {
       name: 'Portfolio',
       path: '/portfolio',
-      active: false,
+      active: true,
     },
     {
       name: truncateStr(frontmatter.title, 20),

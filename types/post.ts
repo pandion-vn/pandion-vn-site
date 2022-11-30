@@ -1,4 +1,4 @@
-export interface Authors {
+interface Authors {
   id: string;
   name: string;
   slug: string;
@@ -14,7 +14,7 @@ export interface Authors {
   url: string;
 }
 
-export interface Tags {
+interface Tags {
   id: string;
   name: string;
   slug: string;
@@ -26,7 +26,7 @@ export interface Tags {
   url: string;
 }
 
-export interface PrimaryAuthor {
+interface PrimaryAuthor {
   id: string;
   name: string;
   slug: string;
@@ -42,7 +42,7 @@ export interface PrimaryAuthor {
   url: string;
 }
 
-export interface PrimaryTag {
+interface PrimaryTag {
   id: string;
   name: string;
   slug: string;
