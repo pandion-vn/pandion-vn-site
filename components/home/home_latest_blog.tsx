@@ -38,7 +38,7 @@ const HomeLatestBlog = ({ posts }: HomeLatestBlogProps) => {
               <div className="card blog rounded border-0 shadow">
                 <div className="position-relative">
                   <img
-                    src={post.feature_image ?? '/images/no-image.png'}
+                    src={post.feature_image ?? '/images/blog/empty_feature_img_post.svg'}
                     className="card-img-top rounded-top"
                     alt=""
                   />
@@ -47,7 +47,7 @@ const HomeLatestBlog = ({ posts }: HomeLatestBlogProps) => {
                 <div className="card-body content">
                   <h5>
                     <Link
-                      href={`/blog/${post.slug}`}
+                      href={`/blog/detail/${post.slug}`}
                       className="card-title title text-dark"
                     >
                       {post.title}
@@ -68,7 +68,7 @@ const HomeLatestBlog = ({ posts }: HomeLatestBlogProps) => {
                       </li>
                     </ul> */}
                     <Link
-                      href={`/blog/${post.slug}`}
+                      href={`/blog/detail/${post.slug}`}
                       className="text-muted readmore"
                     >
                       Xem thêm{' '}
@@ -78,7 +78,7 @@ const HomeLatestBlog = ({ posts }: HomeLatestBlogProps) => {
                 </div>
                 <div className="author">
                   <small className="text-light user d-block">
-                    <FiUser className="uil" />{' '}Pandioner
+                    <FiUser className="uil" />{' '}The Pandioner
                   </small>
                   <small className="text-light date">
                     <FiCalendar className="uil" />{' '}
