@@ -8,15 +8,18 @@ const api = new GhostContentAPI({
 });
 
 interface getAllProps {
-  limit?: string
+  limit?: string;
+  page?: number;
 }
 
-export async function getAllPosts({limit = 'all'}: getAllProps) {
+export async function getAllPosts({ limit = 'all', page = 1 }: getAllProps) {
   const posts = await api.posts
     .browse({
       limit,
+      page,
       include: 'tags',
       order: 'published_at DESC',
+      filter: 'author:pandioner'
     })
     .catch((err: any) => {
       console.error(err);
@@ -34,7 +37,7 @@ export async function getPostBySlug(slug: string) {
   return post;
 }
 
-export async function getAllTags({limit = 'all'}: getAllProps) {
+export async function getAllTags({ limit = 'all' }: getAllProps) {
   const tags = await api.tags.browse({ limit });
 
   return tags;
