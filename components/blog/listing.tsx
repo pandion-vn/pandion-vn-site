@@ -1,11 +1,13 @@
 import { Post } from '@/types/post';
 import { WithChildren } from '@/types/shared';
-import { FiCalendar } from 'react-icons/fi';
+import { FiCalendar, FiUser } from 'react-icons/fi';
 import { formatDate, truncateStr } from '@/common/utils';
+import { Meta } from '@/types/seo';
 import Layout from '../layout';
 import Heading from '../widgets/heading';
 import Link from 'next/link';
 import Pagination from '../widgets/pagination';
+import BlurImage from '../widgets/blur_image';
 
 interface BlogListingProps extends WithChildren {
   posts: Post[];
@@ -14,7 +16,12 @@ interface BlogListingProps extends WithChildren {
   perPage: number;
 }
 
-const BlogListing = ({ posts, totalPosts, currentPage, perPage }: BlogListingProps) => {
+const BlogListing = ({
+  posts,
+  totalPosts,
+  currentPage,
+  perPage,
+}: BlogListingProps) => {
   // const [isTagSelect, setTagSelect] = useState(0);
   // const onTagSelected = (index: number) => setTagSelect(index);
 
@@ -31,8 +38,15 @@ const BlogListing = ({ posts, totalPosts, currentPage, perPage }: BlogListingPro
     },
   ];
 
+  const meta = {
+    title: 'Software development blog',
+    description:
+      'Website to share information / technical about software development',
+    keywords: undefined,
+  } as Meta;
+
   return (
-    <Layout>
+    <Layout meta={meta}>
       <Heading title="Danh Sách Bài Viết" breadcrumbs={breadcrumbs} />
 
       <section className="section">
@@ -64,13 +78,26 @@ const BlogListing = ({ posts, totalPosts, currentPage, perPage }: BlogListingPro
                 <div className="card blog rounded border-0 shadow overflow-hidden">
                   <div className="row align-items-center g-0">
                     <div className="col-md-6">
-                      <img
-                        src={post.feature_image ?? '/images/blog/empty_feature_img_post.svg'}
-                        className="img-fluid"
-                        alt=""
-                      />
+                      {post.feature_image ? (
+                        <BlurImage
+                          src={post.feature_image}
+                          alt={post.feature_image_alt ?? `Image_${post.id}`}
+                          className="img-fluid"
+                          layout="responsive"
+                        />
+                      ) : (
+                        <BlurImage
+                          src="/images/blog/empty_feature_img_post.svg"
+                          alt="No Img"
+                          className="img-fluid"
+                          layout="responsive"
+                        />
+                      )}
                       <div className="overlay bg-dark"></div>
                       <div className="author">
+                        <small className="text-light user d-block">
+                          <FiUser className="uil" /> The Pandioner
+                        </small>
                         <small className="text-light date">
                           <FiCalendar className="uil" />{' '}
                           {formatDate(post.published_at)}

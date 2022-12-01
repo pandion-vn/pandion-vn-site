@@ -4,6 +4,7 @@ import { WithChildren } from '@/types/shared';
 import { FiChevronsRight, FiCalendar, FiUser } from 'react-icons/fi';
 import Link from 'next/link';
 import useTrans from '../../hooks/useTrans';
+import BlurImage from '../widgets/blur_image';
 
 interface HomeLatestBlogProps extends WithChildren {
   posts: Post[];
@@ -37,11 +38,21 @@ const HomeLatestBlog = ({ posts }: HomeLatestBlogProps) => {
             <div key={index} className="col-lg-4 col-md-6 mt-4 pt-2">
               <div className="card blog rounded border-0 shadow">
                 <div className="position-relative">
-                  <img
-                    src={post.feature_image ?? '/images/blog/empty_feature_img_post.svg'}
-                    className="card-img-top rounded-top"
-                    alt=""
-                  />
+                  {post.feature_image ? (
+                    <BlurImage
+                      src={post.feature_image}
+                      alt={post.feature_image_alt ?? `Image_${post.id}`}
+                      className="card-img-top rounded-top"
+                      // layout='responsive'
+                    />
+                  ) : (
+                    <BlurImage
+                      src="/images/blog/empty_feature_img_post.svg"
+                      alt="No Img"
+                      className="card-img-top rounded-top"
+                      // layout="responsive"
+                    />
+                  )}
                   <div className="overlay rounded-top bg-dark"></div>
                 </div>
                 <div className="card-body content">
