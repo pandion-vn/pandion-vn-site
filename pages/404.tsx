@@ -1,4 +1,5 @@
-import Link from "next/link";
+import BlurImage from '@/components/widgets/blur_image';
+import Link from 'next/link';
 
 const FourOhFour = () => {
   return (
@@ -6,8 +7,15 @@ const FourOhFour = () => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-12 text-center">
-            <img src="/images/404.svg" className="img-fluid" alt="" />
-            <div className="text-uppercase mt-4 display-3">Không tìm thấy yêu cầu !</div>
+            <BlurImage
+              src="/images/404.svg"
+              alt="404"
+              className="img-fluid"
+              layout="responsive"
+            />
+            <div className="text-uppercase mt-4 display-3">
+              Không tìm thấy yêu cầu !
+            </div>
             {/* <div className="text-capitalize text-dark mb-4 error-page">
               Không tìm thấy yêu cầu
             </div> */}

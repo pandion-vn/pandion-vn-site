@@ -4,9 +4,11 @@ import { WithChildren } from '@/types/shared';
 import { Post } from '@/types/post';
 import { FiFacebook, FiLinkedin, FiCalendar, FiUser } from 'react-icons/fi';
 import { formatHtmlContent, formatDate, truncateStr } from '@/common/utils';
+import { Meta } from '@/types/seo';
 import Layout from '@/components/layout';
 import Heading from '@/components/widgets/heading';
 import Link from 'next/link';
+import BlurImage from '@/components/widgets/blur_image';
 
 interface BlogDetailProps extends WithChildren {
   post: Post;
@@ -31,8 +33,14 @@ const BlogDetail = ({ post }: BlogDetailProps) => {
     },
   ];
 
+  const meta = {
+    title: post.title ?? 'Software development blog',
+    description: post.excerpt ?? 'Website to share information / technical about software development',
+    keywords: post.primary_tag,
+  } as Meta;
+
   return (
-    <Layout>
+    <Layout meta={meta}>
       <Heading title={post.title} breadcrumbs={breadcrumbs} />
 
       <section className="section">
@@ -57,12 +65,21 @@ const BlogDetail = ({ post }: BlogDetailProps) => {
                 </div>
 
                 <div className="col-md-10">
-                  <img
-                    src={post.feature_image ?? '/images/blog/empty_feature_img_post.svg'}
-                    className="img-fluid rounded-md shadow"
-                    alt=""
-                  />
-
+                  {post.feature_image ? (
+                    <BlurImage
+                      src={post.feature_image}
+                      alt={post.feature_image_alt ?? `Image_${post.id}`}
+                      className="img-fluid rounded-md shadow"
+                      layout='responsive'
+                    />
+                  ) : (
+                    <BlurImage
+                      src="/images/blog/empty_feature_img_post.svg"
+                      alt="No Img"
+                      className="img-fluid rounded-md shadow"
+                      layout="responsive"
+                    />
+                  )}
                   <ul className="list-unstyled d-flex justify-content-between mt-3">
                     <li className="list-inline-item user me-2">
                       <p className="text-muted">
