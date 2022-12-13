@@ -6,13 +6,13 @@ import '../styles/css/colors/default.css';
 import Script from 'next/script';
 import type { AppProps } from 'next/app';
 
-const env = process.env.NODE_ENV || 'test';
+// const env = process.env.NODE_ENV || 'test';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      {env === 'production' ?? (
-        <>
+      {/* {env === 'production' ?? (
+        <> */}
           {/* Global site tag (gtag.js) - Google Analytics */}
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-LN35WDRJPT"
@@ -27,8 +27,8 @@ export default function App({ Component, pageProps }: AppProps) {
           gtag('config', 'G-LN35WDRJPT');
         `}
           </Script>
-        </>
-      )}
+        {/* </>
+      )} */}
       <Component {...pageProps} />
     </>
   );
